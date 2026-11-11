@@ -245,7 +245,7 @@ kbd {
 .top__inner {
   display: flex;
   align-items: center;
-  gap: clamp(12px, 2vw, 24px);
+  gap: 24px;
   min-height: 64px;
 }
 
@@ -297,8 +297,7 @@ kbd {
 }
 
 #themeToggle {
-  margin-left: 0;
-  flex: none;
+  margin-left: auto;
 }
 
 @media (min-width: 760px) {
@@ -857,25 +856,19 @@ kbd {
   color: #0b0c0e;
 }
 
-/* Обёртка значка: разметка svg приходит из lib/glyphs */
-.cover__glyph {
+.cover .glyph {
   position: absolute;
   right: 7%;
   top: 47%;
   width: 40%;
+  height: auto;
   color: var(--hue);
   transform: translateY(-50%);
   transition: transform 0.6s var(--ease);
 }
 
-.cover__glyph .glyph {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.card:hover .cover__glyph,
-.card:focus-within .cover__glyph {
+.card:hover .glyph,
+.card:focus-within .glyph {
   transform: translateY(-50%) scale(1.08) rotate(-4deg);
 }
 
@@ -1040,7 +1033,7 @@ kbd {
   display: none;
 }
 
-.grid[data-view='list'] .cover__glyph {
+.grid[data-view='list'] .cover .glyph {
   right: 18%;
   top: 50%;
   width: 64%;
@@ -1299,108 +1292,4 @@ kbd {
   .card:focus-within {
     transform: none;
   }
-}
-
-/* 10. Переключатель языка (пять версий страницы) --------------------------- */
-
-/* Узкие экраны: список языков */
-.top__lang-select {
-  display: inline-flex;
-  margin-left: auto;
-}
-
-.top__lang-select .icon {
-  position: absolute;
-  left: 11px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1.05em;
-  height: 1.05em;
-  color: var(--muted);
-  pointer-events: none;
-}
-
-.top__lang-select::after {
-  right: 11px;
-}
-
-.top__lang-select select {
-  width: auto;
-  height: 44px;
-  padding: 0 28px 0 32px;
-  border-color: var(--line);
-  background: transparent;
-  font-size: 0.9rem;
-}
-
-/* Широкие экраны: коды языков */
-.top__lang {
-  display: none;
-  margin-left: auto;
-}
-
-.lang {
-  display: inline-flex;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: transparent;
-}
-
-.lang button {
-  min-width: 38px;
-  height: 44px;
-  padding: 0 8px;
-  border: 0;
-  background: transparent;
-  color: var(--muted);
-  font: 500 0.72rem/1 var(--font-mono);
-  letter-spacing: 0.06em;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.lang button:hover {
-  color: var(--text);
-  background: var(--surface);
-}
-
-.lang button[aria-pressed='true'] {
-  background: var(--text);
-  color: var(--bg);
-}
-
-@media (min-width: 560px) {
-  .top__lang-select {
-    display: none;
-  }
-
-  .top__lang {
-    display: inline-flex;
-  }
-}
-
-@media (min-width: 760px) {
-  .top__lang {
-    margin-left: 0;
-  }
-}
-
-/* Переключение языковых копий (статическая версия) */
-.top__lang { display: inline-flex; margin-left: auto; }
-.lang a {
-  display: inline-grid;
-  place-items: center;
-  min-width: 34px;
-  height: 44px;
-  padding: 0 8px;
-  color: var(--muted);
-  font: 500 0.72rem/1 var(--font-mono);
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  transition: background-color 0.2s, color 0.2s;
-}
-.lang a:hover { color: var(--text); background: var(--surface); }
-.lang a[aria-current='page'] { background: var(--text); color: var(--bg); }
-@media (min-width: 760px) {
-  .top__lang { margin-left: 0; }
 }
