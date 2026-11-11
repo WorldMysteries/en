@@ -1293,3 +1293,105 @@ kbd {
     transform: none;
   }
 }
+
+/* Узкие экраны: список языков */
+.top__lang-select {
+  display: inline-flex;
+  margin-left: auto;
+}
+
+.top__lang-select .icon {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.05em;
+  height: 1.05em;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.top__lang-select::after {
+  right: 11px;
+}
+
+.top__lang-select select {
+  width: auto;
+  height: 44px;
+  padding: 0 28px 0 32px;
+  border-color: var(--line);
+  background: transparent;
+  font-size: 0.9rem;
+}
+
+/* Широкие экраны: коды языков */
+.top__lang {
+  display: none;
+  margin-left: auto;
+}
+
+.lang {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: transparent;
+}
+
+.lang button {
+  min-width: 38px;
+  height: 44px;
+  padding: 0 8px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: 500 0.72rem/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.lang button:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.lang button[aria-pressed='true'] {
+  background: var(--text);
+  color: var(--bg);
+}
+
+@media (min-width: 560px) {
+  .top__lang-select {
+    display: none;
+  }
+
+  .top__lang {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 760px) {
+  .top__lang {
+    margin-left: 0;
+  }
+}
+
+/* Переключение языковых копий (статическая версия) */
+.top__lang { display: inline-flex; margin-left: auto; }
+.lang a {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 44px;
+  padding: 0 8px;
+  color: var(--muted);
+  font: 500 0.72rem/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+.lang a:hover { color: var(--text); background: var(--surface); }
+.lang a[aria-current='page'] { background: var(--text); color: var(--bg); }
+@media (min-width: 760px) {
+  .top__lang { margin-left: 0; }
+}
