@@ -1395,3 +1395,28 @@ kbd {
 @media (min-width: 760px) {
   .top__lang { margin-left: 0; }
 }
+/* === Мобильный фикс языкового переключателя === */
+@media (max-width: 559px) {
+  .top__inner {
+    gap: 10px;
+  }
+
+  .lang a {
+    min-width: 28px;
+    padding: 0 5px;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Очень узкие экраны (iPhone SE и т.п.) */
+@media (max-width: 360px) {
+  .lang a {
+    min-width: 24px;
+    padding: 0 3px;
+  }
+  
+  .brand {
+    font-size: 1.35rem; /* чуть уменьшаем логотип, если нужно ещё место */
+  }
+}
