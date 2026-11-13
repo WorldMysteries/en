@@ -1395,7 +1395,7 @@ kbd {
 @media (min-width: 760px) {
   .top__lang { margin-left: 0; }
 }
-/* === Мобильный фикс языкового переключателя === */
+
 @media (max-width: 559px) {
   .top__inner {
     gap: 10px;
@@ -1409,7 +1409,6 @@ kbd {
   }
 }
 
-/* Очень узкие экраны (iPhone SE и т.п.) */
 @media (max-width: 360px) {
   .lang a {
     min-width: 24px;
@@ -1417,6 +1416,6 @@ kbd {
   }
   
   .brand {
-    font-size: 1.35rem; /* чуть уменьшаем логотип, если нужно ещё место */
+    font-size: 1.25rem;
   }
 }
